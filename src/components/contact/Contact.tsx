@@ -7,7 +7,7 @@ import {GoogleMap, useLoadScript, MarkerF} from "@react-google-maps/api"
 
 const Contact = () => {
 
-  const {isLoaded} = useLoadScript({googleMapsApiKey: "AIzaSyBBQBl7HfP6H63mefgxSnan3A5c6fOstHE", })
+  const {isLoaded} = useLoadScript({googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY!, })
 
   type Client = {
     name: string;
@@ -32,7 +32,7 @@ const Contact = () => {
     event.preventDefault();
     if(clientInfo.name && clientInfo.email && clientInfo.message ){
       event.preventDefault();
-      emailjs.sendForm('service_9858k9l', 'template_ncy75yn', event.target , 'HiEVQLwQw8kNkhOyM')
+      emailjs.sendForm(process.env.REACT_APP_SERVICE_ID!, process.env.REACT_APP_TEMPLATE_ID!, event.target , process.env.REACT_APP_EMAILJS_KEY)
       toast.success("Thanks for contacting me! I will email you soon!");
       setClientInfo(prevInfo => ({name:"", email:"", message: ""}))
     }else{

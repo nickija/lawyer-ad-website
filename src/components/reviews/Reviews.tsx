@@ -4,7 +4,7 @@ import data from '../../data'
 
 const Reviews = () => {
   const reviewArray = data.map(review => 
-    <div className={styles.reviews} >
+    <div key={review.id} className={styles.reviews} >
         <div className={styles.rating}>
             <img src="https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png" width="20px" alt="star" /> 
             {review.stars}
