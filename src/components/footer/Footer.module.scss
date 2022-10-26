@@ -1,0 +1,21 @@
+
+$base-color: beige;
+$button-color:rgb(18, 134, 243);
+$base-font: 'Poppins', sans-serif;
+footer {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 99.1%;
+    height: 60px;   
+    background-color: $base-color;
+    border-radius: 20px;
+    font-family: $base-font;
+    
+    .link{
+        text-decoration: none;
+    }
+
+ }
